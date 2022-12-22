@@ -1,19 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: worker-app-deployment
   labels:
-    app: worker
-  name: worker
+    app: demo-voting-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: worker
+      name: worker-app-pod
+      app: demo-voting-app
   template:
     metadata:
+      name: worker-app-pod
       labels:
-        app: worker
+        name: worker-app-pod
+        app: demo-voting-app
+
     spec:
       containers:
-      - image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/worker-app:assignment
-        name: worker
+      - name: worker-app
+        image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/worker-app:assignment
