@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: voting-app
-        image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/vote-app:assignment
+        image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/vote-app:imagetag
         ports:
         - containerPort: 80
