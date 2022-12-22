@@ -1,22 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: voting-app-deployment
   labels:
-    app: vote
-  name: vote
+    app: demo-voting-app
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: vote
+      name: voting-app-pod
+      app: demo-voting-app
   template:
     metadata:
+      name: voting-app-pod
       labels:
-        app: vote
+        name: voting-app-pod
+        app: demo-voting-app
+
     spec:
       containers:
-      - image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/vote-app:assignment
-        name: vote
+      - name: voting-app
+        image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/vote-app:assignment
         ports:
         - containerPort: 80
-          name: vote
