@@ -20,6 +20,6 @@ spec:
     spec:
       containers:
       - name: result-app
-        image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/result-app:assignment-dev
+        image: 357247846217.dkr.ecr.us-east-1.amazonaws.com/result-app:assignment
         ports:
         - containerPort: 80
