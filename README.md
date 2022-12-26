@@ -45,7 +45,7 @@ To remove them, run:
 ```shell
 kubectl delete -f k8s-specifications/
 ```
-
+## .....
 ## Architecture
 
 ![Architecture diagram](architecture.png)
